@@ -1,4 +1,4 @@
-From 81325e83df2f24ddbf403ec61a3ecfc75525e535 Mon Sep 17 00:00:00 2001
+From ca425176603fe3eaac0da1c0c84185556acf9f5c Mon Sep 17 00:00:00 2001
 From: Roberto Costa <robertocmcosta@gmail.com>
 Date: Thu, 1 Jun 2017 14:37:13 +0000
 Subject: Scribus: build fix
@@ -17,6 +17,29 @@ index 892d0bb..b965f8b 100644
 +#endif
  
  extern ScribusQApp* ScQApp;
+ 
+-- 
+2.12.2
+
+
+From 51210ea78a5a64d4af569a8f03950a5f4f8768e1 Mon Sep 17 00:00:00 2001
+From: Roberto Costa <robertocmcosta@gmail.com>
+Date: Thu, 1 Jun 2017 15:39:04 +0000
+Subject: Scribus: build fix - prefsDir
+
+
+diff --git a/scribus/scpaths.cpp b/scribus/scpaths.cpp
+index b965f8b..5c32fbe 100644
+--- a/scribus/scpaths.cpp
++++ b/scribus/scpaths.cpp
+@@ -14,7 +14,7 @@ for which a new license (GPL+exception) is in place.
+ #include "prefsmanager.h"
+ #include "scconfig.h"
+ #include "scribusapp.h"
+-#ifdef prefsDir
++#ifndef prefsDir
+ QString prefsDir;
+ #endif
  
 -- 
 2.12.2
